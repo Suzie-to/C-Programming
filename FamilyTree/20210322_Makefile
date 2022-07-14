@@ -1,0 +1,18 @@
+cc = gcc
+source = main.c FamTree.c
+compileFlag = -c
+objects = main.o FamTree.o
+exe = tree.exe
+linkFlag = -o
+
+all: $(exe) 
+
+$(exe) : $(objects)
+	$(cc) $(objects) $(linkFlag) $(exe)
+
+$(objects) : $(source)
+	$(cc) $(compileFlag) $(source) 
+
+clean: 
+	del $(objects)
+	del $(exe)
